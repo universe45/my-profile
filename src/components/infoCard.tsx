@@ -16,8 +16,8 @@ export default function InfoCard() {
                         <div className="card-body">
                             <h2 className="card-title">Titpong Wannachai</h2>
                             <div className="flex flex-row gap-4">
-                                <a href="tel:+66954819416" className="btn btn-outline">Call me</a>
-                                <a href="mailto:ttp.wannachai@gmail.com" className="btn btn-outline">Email me</a>
+                                <a href="tel:+66954819416" className="btn btn-outline">Call</a>
+                                <a href="mailto:ttp.wannachai@gmail.com" className="btn btn-outline">Email</a>
                             </div>
                         </div>
                     </div>
