@@ -12,8 +12,8 @@ export default function InfoCard() {
             <section id="AboutMe" className="caroseul-item flex flex-col h-screen py-10">
                 <div className="card h-screen justify-center">
                     <div className="card card-side bg-[#191919] shadow-xl">
-                        <figure>
-                            <Image className="rounded-lg w-1/2 h-3/4 object-cover" src="/profile.jpg" alt="Profile Picture" width={1080} height={1920} />
+                        <figure className="w-fit h-fit">
+                            <Image className="rounded-lg object-cover" src="/profile.jpg" alt="Profile Picture" width={1080} height={1920} />
                         </figure>
                         <div className="card-body">
                             <h2 className="card-title py-2">Titpong Wannachai</h2>
