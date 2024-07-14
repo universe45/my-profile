@@ -46,7 +46,7 @@ export default function StepNav() {
     return (
         <ul className="fixed steps steps-vertical w-fit h-screen px-4">
             {steps.map((step) => (
-                <li key={step.id} data-content="●" className="step step-neutral">
+                <li key={step.id} data-content="" className="step step-neutral">
                     <a
                         href={`#${step.id}`}
                         className={`h-fit w-fit btn ${selectedStep === step.id ? 'btn-accent' : 'btn-outline'}`}
