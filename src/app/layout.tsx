@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Noto_Sans_Thai } from "next/font/google";
 import "./globals.css";
+import Navbar  from "@/components/navbar";
+import StepNav from "@/components/stepNav";
 
-const inter = Inter({ subsets: ["latin"] });
+const Noto_Sans = Noto_Sans_Thai({ subsets: ["latin", "thai"] });
 
 export const metadata: Metadata = {
   title: "Profile",
@@ -16,7 +18,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={Noto_Sans.className}>{children}</body>
     </html>
+    
   );
 }
