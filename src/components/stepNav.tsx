@@ -49,7 +49,7 @@ export default function StepNav() {
                 <li key={step.id} data-content="" className="step step-neutral">
                     <a
                         href={`#${step.id}`}
-                        className={`h-fit w-fit btn ${selectedStep === step.id ? 'btn-accent' : 'btn-outline'}`}
+                        className={`h-fit w-fit btn ${selectedStep === step.id ? 'btn-outline' : 'btn-ghost'}`}
                         onClick={() => setSelectedStep(step.id)}
                     >
                         {step.label}
