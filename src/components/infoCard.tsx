@@ -8,7 +8,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 
 export default function InfoCard() {
     return (
-        <div className="carousel carousel-center carousel-vertical align-middle">
+        <div className="carousel carousel-center carousel-vertical align-middle select-none">
             <section id="1-AboutMe" className="caroseul-item flex flex-col h-screen py-10">
                 <div className="card h-screen justify-center">
                     <div className="card md:card-side bg-[#393E46] shadow-xl">

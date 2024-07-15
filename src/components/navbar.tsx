@@ -72,8 +72,8 @@ export default function Navbar() {
                 ))}
             </div>
             <div className="px-14 py-4 text-center bg-base-100 w-full font-sans text-sm">
-        © {new Date().getFullYear()} UNIVERSE. All rights reserved.
-      </div>
+                © {new Date().getFullYear()} UNIVERSE. All rights reserved.
+            </div>
         </div>
     );
 }
