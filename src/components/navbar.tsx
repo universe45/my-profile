@@ -1,46 +1,79 @@
 "use client";
-import React from "react";
+import { Icon } from "@iconify/react/dist/iconify.js";
+import React, { useEffect, useState } from "react";
+
+const barItems = [
+    { id: "1-AboutMe", label: "About Me", icon: "mdi:about-circle-outline" },
+    { id: "2-Education", label: "Education", icon: "mdi:school-outline" },
+    { id: "3-Experience", label: "Experience", icon: "ic:outline-work-history" },
+    { id: "4-Activity", label: "Activity", icon: "lucide:square-activity" },
+];
 
 export default function Navbar() {
-    return (
+    const [selectedBarItem, setSelectedBarItem] = useState("1-AboutMe");
 
-        <div className="absolute flex flex-col bg-transparent h-20 w-screen bg-white justify-center items-center mx-6">
-            <div className="navbar bg-[#191919] fixed rounded-full max-w-[920px] z-10 ">
-                <div className="navbar-start">
-                    <div className="dropdown">
-                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M4 6h16M4 12h8m-8 6h16" />
-                            </svg>
-                        </div>
-                        <ul
-                            tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                            <li><a>Item 1</a></li>
-                            <li><a>Item 3</a></li>
-                        </ul>
-                    </div>
-                    <a className="btn btn-ghost text-xl">My Profile</a>
-                </div>
-                <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
-                        <li><a>About me</a></li>
-                        <li><a>Experience</a></li>
-                    </ul>
-                </div>
-                <div className="navbar-end">
-                    <a className="btn">Contact</a>
-                </div>
+    useEffect(() => {
+        const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setSelectedBarItem(entry.target.id);
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(handleIntersection, {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.5,
+        });
+
+        barItems.forEach(step => {
+            const section = document.getElementById(step.id);
+            if (section) {
+                observer.observe(section);
+            }
+        });
+
+        return () => {
+            barItems.forEach(step => {
+                const section = document.getElementById(step.id);
+                if (section) {
+                    observer.unobserve(section);
+                }
+            });
+        };
+    }, []);
+
+    const handleClick = (e: React.MouseEvent<HTMLButtonElement>, id: string): void => {
+        e.preventDefault();
+        setSelectedBarItem(id);
+        const section = document.getElementById(id);
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
+    const buttonStyle = {
+        transition: 'background-color 0.3s ease, transform 0.3s ease',
+    };
+
+    return (
+        <div className="flex flex-col">
+            <div className="btm-nav relative rounded-box flex w-full justify-center items-center px-4 gap-[70px] lg:hidden">
+                {barItems.map(item => (
+                    <button
+                        key={item.id}
+                        style={buttonStyle}
+                        className={selectedBarItem === item.id ? "active" : ""}
+                        onClick={(e) => handleClick(e, item.id)}
+                    >
+                        <Icon icon={item.icon} width="30" height="30" />
+                    </button>
+                ))}
             </div>
+            <div className="px-14 py-4 text-center bg-base-100 w-full font-sans text-sm">
+        © {new Date().getFullYear()} UNIVERSE. All rights reserved.
+      </div>
         </div>
     );
 }

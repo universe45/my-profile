@@ -9,11 +9,11 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 export default function InfoCard() {
     return (
         <div className="carousel carousel-center carousel-vertical align-middle">
-            <section id="AboutMe" className="caroseul-item flex flex-col h-screen py-10">
+            <section id="1-AboutMe" className="caroseul-item flex flex-col h-screen py-10">
                 <div className="card h-screen justify-center">
-                    <div className="card card-side bg-[#191919] shadow-xl">
-                        <figure className="w-fit h-fit">
-                            <Image className="rounded-lg object-cover" src="/profile.jpg" alt="Profile Picture" width={1080} height={1920} />
+                    <div className="card md:card-side bg-[#393E46] shadow-xl">
+                        <figure className="w-full h-64 md:h-full">
+                            <Image className="rounded-lg object-cover" src="/Profile.jpg" alt="Profile Picture" width={1080} height={1920} />
                         </figure>
                         <div className="card-body">
                             <h2 className="card-title py-2">Titpong Wannachai</h2>
@@ -22,9 +22,19 @@ export default function InfoCard() {
                                     Hello, I'm a student at Bangkok University majoring in Computer Science (Data Science & Cybersecurity).
                                     Interested in programming and if you have any opportunities, please contact to me.
                                 </div>
-                                <div className="flex flex-row gap-4">
-                                    <a href="tel:+66954819416" className="btn btn-outline">Call</a>
-                                    <a href="mailto:ttp.wannachai@gmail.com" className="btn btn-outline">Email</a>
+                                <div className="flex flex-row justify-center" style={{ display: 'flex', gap: '20px' }}>
+                                    <a href="tel:+66954819416" className="btn btn-outline">
+                                        <Icon icon="el:phone-alt" width="30" height="30"/>
+                                    </a>
+                                    <a href="mailto:ttp.wannachai@gmail.com" className="btn btn-outline">
+                                        <Icon icon="grommet-icons:mail" width="30" height="30"/>
+                                    </a>
+                                    <a href="https://github.com/universe45" className="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                                        <Icon icon="mdi:github" width="40" height="40"/>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/wnncttp" className="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                                        <Icon icon="mdi:linkedin" width="40" height="40"/>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -32,9 +42,9 @@ export default function InfoCard() {
                 </div>
             </section>
 
-            <section id="Education" className="caroseul-item flex flex-col gap-4 h-screen py-10">
+            <section id="2-Education" className="caroseul-item flex flex-col gap-4 h-screen py-10">
                 <div className="card h-screen justify-center">
-                    <div className="card bg-[#191919] shadow-xl">
+                    <div className="card bg-[#393E46] shadow-xl">
                         <ul className="timeline timeline-snap-icon w-fit max-md:timeline-compact timeline-vertical py-4">
                             <li>
                                 <div className="timeline-middle">
@@ -50,7 +60,7 @@ export default function InfoCard() {
                                     </svg>
                                 </div>
                                 <div className="timeline-start mb-10 md:text-end">
-                                    <time className="font-mono italic rounded-box bg-base-100 px-2 py-2">2019 - 2021</time>
+                                    <time className="font-mono italic rounded-box bg-base-100 px-5 py-2">2019 - 2021</time>
                                     <div className="text-lg font-black py-2">
                                         Chiang Rai Municipality School 6
                                     </div>
@@ -79,7 +89,7 @@ export default function InfoCard() {
                                     </svg>
                                 </div>
                                 <div className="timeline-end">
-                                    <time className="font-mono italic rounded-box bg-base-100 px-2 py-2">2021 - Present</time>
+                                    <time className="font-mono italic rounded-box bg-base-100 px-5 py-2">2021 - Present</time>
                                     <div className="text-lg font-black py-2">
                                         Bangkok University
                                     </div>
@@ -100,9 +110,9 @@ export default function InfoCard() {
                 </div>
             </section>
 
-            <section id="Experience" className="caroseul-item flex flex-col gap-4 h-screen py-10">
+            <section id="3-Experience" className="caroseul-item flex flex-col gap-4 h-screen py-10">
                 <div className="card h-screen justify-center">
-                    <div className="card card-side h-max bg-[#191919] shadow-xl">
+                    <div className="card card-side h-max bg-[#393E46] shadow-xl">
                         <div className="card-body">
                             <div className="flex flex-col gap-6">
                                 <h2 className="text-lg font-bold">Center of Spacialty Innovation</h2>
@@ -126,7 +136,7 @@ export default function InfoCard() {
                                         <Icon icon="logos:typescript-icon-round" width="40" height="40" />
                                         <Icon icon="file-icons:nextjs" width="40" height="40" />
                                         <Icon icon="devicon:csharp" width="40" height="40" />
-                                        <Icon icon="logos:python" width="40" height="40" /> 
+                                        <Icon icon="logos:python" width="40" height="40" />
                                         <Icon icon="logos:mysql" width="40" height="40" />
                                         <Icon icon="logos:docker-icon" width="40" height="40" />
                                     </div>
@@ -137,16 +147,35 @@ export default function InfoCard() {
                 </div>
             </section>
 
-            <section id="Activity" className="caroseul-item flex flex-col gap-4 h-screen py-10">
+            <section id="4-Activity" className="caroseul-item flex flex-col gap-4 h-screen py-10">
                 <div className="card h-screen justify-center">
-                    <div className="card card-side bg-[#191919] shadow-xl">
-                        <div className="card-body">
-                            <div className="flex flex-col gap-6">
-                                    <p>● SEC GIRL 2023 work shop</p>
-                                    <p>● Control roon staff of BUxKAIT Internship Program</p>
-                                    <p>● Final Pitching BAMxBU Unicorn Battle</p>
-                            </div>
+                    <div className="carousel w-full">
+                        <div id="item1" className="carousel-item w-full">
+                            <img
+                                src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg"
+                                className="w-full" />
                         </div>
+                        <div id="item2" className="carousel-item w-full">
+                            <img
+                                src="https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.jpg"
+                                className="w-full" />
+                        </div>
+                        <div id="item3" className="carousel-item w-full">
+                            <img
+                                src="https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.jpg"
+                                className="w-full" />
+                        </div>
+                        <div id="item4" className="carousel-item w-full">
+                            <img
+                                src="https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.jpg"
+                                className="w-full" />
+                        </div>
+                    </div>
+                    <div className="flex w-full justify-center gap-2 py-2">
+                        <a href="#item1" className="btn btn-xs">1</a>
+                        <a href="#item2" className="btn btn-xs">2</a>
+                        <a href="#item3" className="btn btn-xs">3</a>
+                        <a href="#item4" className="btn btn-xs">4</a>
                     </div>
                 </div>
             </section>
