@@ -6,7 +6,7 @@ import React from "react";
 
 export default function Home() {
   return (
-    <div className="flex flex-col bg-base-100 min-h-screen">
+    <div className="flex flex-col bg-base-100 min-h-screen select-none">
       <div className="flex-grow">
         <div className="flex flex-row">
           <div className="flex-col bg-base-100 h-screen w-1/4 hidden lg:flex px-16">

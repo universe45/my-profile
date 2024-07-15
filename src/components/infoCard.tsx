@@ -8,12 +8,12 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 
 export default function InfoCard() {
     return (
-        <div className="carousel carousel-center carousel-vertical align-middle select-none">
+        <div className="carousel carousel-center carousel-vertical align-middle">
             <section id="1-AboutMe" className="caroseul-item flex flex-col h-screen py-10">
                 <div className="card h-screen justify-center">
                     <div className="card md:card-side bg-[#393E46] shadow-xl">
                         <figure className="w-full h-64 md:h-full">
-                            <Image className="rounded-lg object-cover" src="/Profile.jpg" alt="Profile Picture" width={1080} height={1920} />
+                            <Image className="rounded-lg object-cover h-full" src="/Profile.jpg" alt="Profile Picture" width={1080} height={1920} />
                         </figure>
                         <div className="card-body">
                             <h2 className="card-title py-2">Titpong Wannachai</h2>
@@ -22,7 +22,7 @@ export default function InfoCard() {
                                     Hello, I'm a student at Bangkok University majoring in Computer Science (Data Science & Cybersecurity).
                                     Interested in programming and if you have any opportunities, please contact to me.
                                 </div>
-                                <div className="flex flex-row justify-center" style={{ display: 'flex', gap: '20px' }}>
+                                <div className="grid grid-cols-2 md:grid-cols-4 justify-center gap-5">
                                     <a href="tel:+66954819416" className="btn btn-outline">
                                         <Icon icon="el:phone-alt" width="30" height="30"/>
                                     </a>
