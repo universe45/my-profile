@@ -13,7 +13,7 @@ export default function InfoCard() {
                 <div className="card h-screen justify-center">
                     <div className="card md:card-side bg-[#393E46] shadow-xl">
                         <figure className="w-full h-64 md:h-full">
-                            <Image className="rounded-lg object-cover h-full" src="./Profile.JPG" alt="Profile Picture" width={1080} height={1920} />
+                            <Image className="rounded-lg object-cover h-full" src="/Profile.JPG" alt="Profile Picture" width={1080} height={1920} />
                         </figure>
                         <div className="card-body">
                             <h2 className="card-title py-2">Titpong Wannachai</h2>
