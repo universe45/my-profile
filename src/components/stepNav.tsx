@@ -6,6 +6,7 @@ const steps = [
     { id: "2-Education", label: "Education" },
     { id: "3-Experience", label: "Experience" },
     { id: "4-Activity", label: "Activity" },
+    { id: "5-Activitys", label: "Activitys" },
 ];
 
 export default function StepNav() {
