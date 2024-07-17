@@ -5,38 +5,38 @@
 import React from "react";
 import Image from "next/image"; // Import the Image component from the appropriate library
 import { Icon } from "@iconify/react/dist/iconify.js";
+import { Typography, Carousel, CardHeader, Button } from "@material-tailwind/react";
 
 export default function InfoCard() {
     return (
         <div className="carousel carousel-center carousel-vertical align-middle select-none">
-            <section id="1-AboutMe" className="caroseul-item flex flex-col h-screen py-10">
-                <div className="card h-screen justify-center">
-                    <div className="card md:card-side bg-[#393E46] shadow-xl">
-                        <figure className="w-full h-64 md:h-full">
-                            <Image className="rounded-lg object-cover" src="/Profile.jpg" alt="Profile Picture" width={1080} height={1920} />
-                        </figure>
-                        <div className="card-body">
-                            <h2 className="card-title py-2">Titpong Wannachai</h2>
-                            <div className="flex flex-col gap-10">
-                                <div>
-                                    Hello, I'm a student at Bangkok University majoring in Computer Science (Data Science & Cybersecurity).
-                                    Interested in programming and if you have any opportunities, please contact to me.
-                                </div>
-                                <div className="flex flex-row justify-center" style={{ display: 'flex', gap: '20px' }}>
-                                    <a href="tel:+66954819416" className="btn btn-outline">
-                                        <Icon icon="el:phone-alt" width="30" height="30"/>
-                                    </a>
-                                    <a href="mailto:ttp.wannachai@gmail.com" className="btn btn-outline">
-                                        <Icon icon="grommet-icons:mail" width="30" height="30"/>
-                                    </a>
-                                    <a href="https://github.com/universe45" className="btn btn-outline" target="_blank" rel="noopener noreferrer">
-                                        <Icon icon="mdi:github" width="40" height="40"/>
-                                    </a>
-                                    <a href="https://www.linkedin.com/in/wnncttp" className="btn btn-outline" target="_blank" rel="noopener noreferrer">
-                                        <Icon icon="mdi:linkedin" width="40" height="40"/>
-                                    </a>
-                                </div>
-                            </div>
+            <section id="1-AboutMe" className="caroseul-item flex flex-col h-[75vh] lg:h-screen justify-center lg:py-10 py-5">
+                <div className="card lg:h-[24rem] md:h-[24rem] justify-center bg-[#393E46] lg:card-side shadow-xl">
+                    <figure className="">
+                        <Image className="object-cover w-[64rem] h-[18rem] lg:h-full lg:w-[24rem]" src="/profile.jpg" alt="Profile Pcture" width={720} height={1280} />
+                    </figure>
+                    <div className="card card-body gap-6">
+                        <div className="flex flex-col gap-4">
+                            <h2 className="card-title font-bold justify-start">
+                                Titpong Wannachai
+                            </h2>
+                            <a className="card-body p-0 font-normal justify-start">
+                                I'm student at Bangkok Univerity
+                            </a>
+                        </div>
+                        <div className="grid grid-cols-2 md:grid-cols-4 justify-center gap-5">
+                            <a href="tel:+66954819416" className="btn btn-outline">
+                                <Icon icon="el:phone-alt" width="30" height="30" />
+                            </a>
+                            <a href="mailto:ttp.wannachai@gmail.com" className="btn btn-outline">
+                                <Icon icon="grommet-icons:mail" width="30" height="30" />
+                            </a>
+                            <a href="https://github.com/universe45" className="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                                <Icon icon="mdi:github" width="40" height="40" />
+                            </a>
+                            <a href="https://www.linkedin.com/in/wnncttp" className="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                                <Icon icon="mdi:linkedin" width="40" height="40" />
+                            </a>
                         </div>
                     </div>
                 </div>

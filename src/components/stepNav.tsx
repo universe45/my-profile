@@ -44,12 +44,12 @@ export default function StepNav() {
     }, []);
 
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
-        e.preventDefault(); // Prevent default anchor behavior
+        e.preventDefault();
         setSelectedStep(id);
-
+    
         const section = document.getElementById(id);
         if (section) {
-            section.scrollIntoView({ behavior: "smooth" });
+            section.scrollIntoView();
         }
     };
 
