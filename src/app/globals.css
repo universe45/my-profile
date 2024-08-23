@@ -35,3 +35,11 @@ html{
     text-wrap: balance;
   }
 }
+
+.rotate-0 {
+  transform: rotate(0deg);
+}
+
+.rotate-90 {
+  transform: rotate(90deg);
+}
