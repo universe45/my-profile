@@ -11,7 +11,7 @@ export default function InfoCard() {
             <section id="1-AboutMe" className="caroseul-item flex flex-col h-[75vh] lg:h-screen justify-center lg:py-10 py-5">
                 <div className="card lg:h-[24rem] md:h-[24rem] justify-center bg-[#393E46] lg:card-side shadow-xl">
                     <figure className="">
-                        <img className="object-cover w-[64rem] h-[18rem] lg:h-full lg:w-[24rem]" src="/night_sky.jpg" alt="Profile Picture" />
+                        <img className="object-cover w-[64rem] h-[18rem] lg:h-full lg:w-[24rem]" src="/nightSky.jpg" alt="Profile Picture" />
                     </figure>
                     <div className="card card-body gap-4">
                         <div className="flex flex-col gap-4">
