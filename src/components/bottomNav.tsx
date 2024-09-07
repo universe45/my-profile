@@ -4,9 +4,8 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 
 const listItems = [
     { id: "1-AboutMe", label: "A B O U T"},
-    { id: "2-Education", label: "S K I L L"},
-    { id: "3-Experience", label: "P R O J E C T"},
-    { id: "4-Activity", label: "C O N T A C T"},
+    { id: "2-Skill", label: "S K I L L"},
+    { id: "3-Experience", label: "E X P E R I E N C E"},
 ];
 
 export default function BottomNav() {
@@ -21,6 +20,10 @@ export default function BottomNav() {
         if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
             setIsOpen(false);
         }
+    };
+
+    const handleItemClick = () => {
+        setIsOpen(false);
     };
 
     useEffect(() => {
@@ -53,7 +56,7 @@ export default function BottomNav() {
             >
                 {listItems.map((item) => (
                     <li key={item.id} className="rounded-box text-xs py-2 hover:bg-white hover:text-black">
-                        <a href={`#${item.id}`}>{item.label}</a>
+                        <a href={`#${item.id}`} onClick={handleItemClick}>{item.label}</a>
                     </li>
                 ))}
             </ul>
