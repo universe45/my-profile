@@ -3,7 +3,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import React from "react";
-import Image from "next/image"; // Import the Image component from the appropriate library
 import { Icon } from "@iconify/react/dist/iconify.js";
 
 export default function InfoCard() {
@@ -12,7 +11,7 @@ export default function InfoCard() {
             <section id="1-AboutMe" className="caroseul-item flex flex-col h-[75vh] lg:h-screen justify-center lg:py-10 py-5">
                 <div className="card lg:h-[24rem] md:h-[24rem] justify-center bg-[#393E46] lg:card-side shadow-xl">
                     <figure className="">
-                        <Image className="object-cover w-[64rem] h-[18rem] lg:h-full lg:w-[24rem]" src="/profile.jpg" alt="Profile Pcture" width={720} height={1280} />
+                        <img className="object-cover w-[64rem] h-[18rem] lg:h-full lg:w-[24rem]" src="/night_sky.jpg" alt="Profile Picture" />
                     </figure>
                     <div className="card card-body gap-4">
                         <div className="flex flex-col gap-4">
@@ -138,9 +137,11 @@ export default function InfoCard() {
                                 </div>
                                 <div>
                                     <h4 className="text-lg font-bold">Project:</h4>
-                                    <p>● Radar DR-172 ADV</p>
-                                    <p>● Arny Air Defense System (AADS)</p>
+                                    <p>● Automating Drone Operation</p>
+                                    <p>● SkyWarden</p>
+                                    <p>● Army Air Defense System (AADS)</p>
                                     <p>● VR-DARTS</p>
+                                    <p>● Radar DR-172 ADV</p>
                                 </div>
                                 <div className="flex flex-col gap-4">
                                 </div>
