@@ -1,6 +1,4 @@
 "use client";
-import StepNav from "@/components/stepNav";
-import Navbar from "@/components/navbar";
 import BottomNav from "@/components/bottomNav";
 import InfoCard from "@/components/infoCard";
 import React from "react";
@@ -13,7 +11,6 @@ export default function Home() {
       </div>
 
       <div className="toast toast-end toast-bottom">
-        {/* <Navbar /> */}
           <BottomNav />
       </div>
     </div>

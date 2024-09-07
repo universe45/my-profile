@@ -5,7 +5,6 @@
 import React from "react";
 import Image from "next/image"; // Import the Image component from the appropriate library
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { Typography, Carousel, CardHeader, Button } from "@material-tailwind/react";
 
 export default function InfoCard() {
     return (
