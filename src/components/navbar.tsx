@@ -59,7 +59,7 @@ export default function Navbar() {
 
     return (
         <div className="flex flex-col">
-            <div className="btm-nav relative rounded-box flex w-full justify-center items-center px-4 gap-[70px] lg:hidden">
+            <div className="btm-nav relative rounded-box flex w-full justify-center items-center px-4 gap-[70px] lg:hidden ">
                 {barItems.map(item => (
                     <button
                         key={item.id}

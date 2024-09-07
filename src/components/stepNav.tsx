@@ -6,6 +6,7 @@ const steps = [
     { id: "2-Education", label: "Education" },
     { id: "3-Experience", label: "Experience" },
     { id: "4-Activity", label: "Activity" },
+    { id: "5-Activitys", label: "Activitys" },
 ];
 
 export default function StepNav() {
@@ -44,12 +45,12 @@ export default function StepNav() {
     }, []);
 
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
-        e.preventDefault(); // Prevent default anchor behavior
+        e.preventDefault();
         setSelectedStep(id);
-
+    
         const section = document.getElementById(id);
         if (section) {
-            section.scrollIntoView({ behavior: "smooth" });
+            section.scrollIntoView();
         }
     };
 
