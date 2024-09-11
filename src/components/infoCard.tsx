@@ -4,12 +4,13 @@
 "use client";
 import React from "react";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import ModalCard from "@/components/modalCard";
 
 export default function InfoCard() {
     return (
         <div className="carousel carousel-center carousel-vertical align-middle select-none">
             <section id="1-AboutMe" className="caroseul-item flex flex-col h-[75vh] lg:h-screen justify-center lg:py-10 py-5">
-                <div className="card lg:h-[24rem] md:h-[24rem] justify-center bg-[#393E46] lg:card-side shadow-xl">
+                <div className="card glass lg:h-[24rem] md:h-[24rem] justify-center bg-[#393E46] lg:card-side shadow-xl">
                     <figure className="">
                         <img className="object-cover w-[64rem] h-[18rem] lg:h-full lg:w-[24rem]" src="/nightSky.jpg" alt="Profile Picture" />
                     </figure>
@@ -41,7 +42,7 @@ export default function InfoCard() {
                         </div>
                         <div className="flex flex-col gap-2">
                             <div>
-                                <h1 className=" card-title font-bold justify-start">
+                                <h1 className="badge badge-lg badge-outline font-bold justify-start p-4">
                                     Education
                                 </h1>
                             </div>
@@ -121,36 +122,13 @@ export default function InfoCard() {
                 </div>
             </section>
 
-            <section id="3-Experience" className="caroseul-item flex flex-col gap-4 h-screen py-10">
-                <div className="card h-screen justify-center">
-                    <div className="card card-side h-max bg-[#393E46] shadow-xl">
-                        <div className="card-body">
-                            <div className="flex flex-col gap-6">
-                                <h2 className="text-lg font-bold">Center of Spacialty Innovation</h2>
-                                <div>
-                                    <div className="text-lg font-bold">Position:</div>
-                                    <div>Software and Web Development</div>
-                                </div>
-                                <div>
-                                    <div className="text-lg font-bold">Period:</div>
-                                    <div>2023 - Present</div>
-                                </div>
-                                <div>
-                                    <h4 className="text-lg font-bold">Project:</h4>
-                                    <p>● Automating Drone Operation</p>
-                                    <p>● SkyWarden</p>
-                                    <p>● Army Air Defense System (AADS)</p>
-                                    <p>● VR-DARTS</p>
-                                    <p>● Radar DR-172 ADV</p>
-                                </div>
-                                <div className="flex flex-col gap-4">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <section id="3-Experience" className="caroseul-item flex flex-row gap-4 h-screen py-10 justify-center">
+                <div className="carousel carousel-center align-middle select-none overflow-hidden">
+                    <section className="caroseul-item flex flex-row h-screen justify-center py-10">
+                        <ModalCard />
+                    </section>
                 </div>
             </section>
-
         </div>
     );
 }
