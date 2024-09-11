@@ -10,9 +10,13 @@ export default function Home() {
         <InfoCard />
       </div>
 
-      <div className="toast toast-end toast-bottom">
-          <BottomNav />
+      <div className="fixed toast toast-end toast-bottom">
+        <BottomNav />
       </div>
+
+      <footer className="fixed bottom-0 text-center text-xs text-gray-500 p-4">
+        <p>&copy; {new Date().getFullYear()} TTP-WNNC. All rights reserved.</p>
+      </footer>
     </div>
   );
 }

@@ -6,6 +6,7 @@ import React from "react";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import ModalCard from "@/components/modalCard";
 
+
 export default function InfoCard() {
     return (
         <div className="carousel carousel-center carousel-vertical align-middle select-none">
@@ -14,12 +15,12 @@ export default function InfoCard() {
                     <figure className="">
                         <img className="object-cover w-[64rem] h-[18rem] lg:h-full lg:w-[24rem]" src="/nightSky.jpg" alt="Profile Picture" />
                     </figure>
-                    <div className="card card-body gap-4">
-                        <div className="flex flex-col gap-4">
+                    <div className="card card-body gap-2">
+                        <div className="flex flex-col gap-2">
                             <h2 className="card-title font-bold justify-start">
-                                Titpong Wannachai
+                                TITIPONG WANNACHAI
                             </h2>
-                            <a className="card-body p-0 font-normal justify-start">
+                            <a className="badge badge-primary badge-outline rounded-full p-3 font-normal justify-start">
                                 Software & Web Developer
                             </a>
                         </div>
@@ -53,7 +54,7 @@ export default function InfoCard() {
                                 <a className="card-body p-0 font-normal justify-start">
                                     School of Information Technology and Innovation
                                 </a>
-                                <a className="card-body p-0 font-normal justify-start">
+                                <a className="card-body p-0 font-normal justify-start ">
                                     (Computer Science)
                                 </a>
                             </div>
@@ -68,7 +69,7 @@ export default function InfoCard() {
                         <div className="card-body">
                             <div className="flex flex-col gap-2 items-center">
                                 <div className="flex flex-col gap-4 items-center">
-                                    <div className="text-lg font-bold">
+                                    <div className="text-lg font-bold py-2">
                                         Programming Language
                                     </div>
                                     <div className="flex gap-5">
@@ -85,7 +86,7 @@ export default function InfoCard() {
                                 </div>
 
                                 <div className="flex flex-col gap-4 items-center">
-                                    <div className="text-lg font-bold">
+                                    <div className="text-lg font-bold py-2">
                                         Framework and Library
                                     </div>
                                     <div className="flex gap-5">
@@ -102,7 +103,7 @@ export default function InfoCard() {
                                 </div>
 
                                 <div className="flex flex-col gap-4 items-center">
-                                    <div className="text-lg font-bold">
+                                    <div className="text-lg font-bold py-2">
                                         Tools
                                     </div>
                                     <div className="flex gap-5">
@@ -122,12 +123,8 @@ export default function InfoCard() {
                 </div>
             </section>
 
-            <section id="3-Experience" className="caroseul-item flex flex-row gap-4 h-screen py-10 justify-center">
-                <div className="carousel carousel-center align-middle select-none overflow-hidden">
-                    <section className="caroseul-item flex flex-row h-screen justify-center py-10">
-                        <ModalCard />
-                    </section>
-                </div>
+            <section id="3-Experience" className="caroseul-item flex flex-row gap-4 h-screen py-10 justify-center items-center">
+                <ModalCard />
             </section>
         </div>
     );

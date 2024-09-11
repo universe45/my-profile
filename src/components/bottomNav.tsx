@@ -42,7 +42,7 @@ export default function BottomNav() {
             <div 
                 tabIndex={0} 
                 role="button" 
-                className="btn w-16 h-16 rounded-full hover:bg-gray-100/90 hover:text-black" 
+                className="btn w-16 h-16 rounded-full btn-outline hover:bg-gray-100/90 hover:text-black" 
                 onClick={toggleDropdown}
             >
                 <Icon 
@@ -52,7 +52,7 @@ export default function BottomNav() {
             </div>
             <ul 
                 tabIndex={0} 
-                className={`dropdown-content menu bg-base-100 rounded-box z-[1000] w-52 p-2 shadow ${isOpen ? 'block' : 'hidden'}`}
+                className={`dropdown-content menu rounded-box outline outline-1 outline-white z-[1000] w-52 p-2 shadow ${isOpen ? 'block' : 'hidden'}`}
             >
                 {listItems.map((item) => (
                     <li key={item.id} className="rounded-box text-xs py-2 hover:bg-white hover:text-black">
