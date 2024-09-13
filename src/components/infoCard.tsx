@@ -81,7 +81,6 @@ export default function InfoCard() {
                                         <Icon icon="logos:javascript" width="40" height="40" />
                                         <Icon icon="logos:python" width="40" height="40" />
                                         <Icon icon="devicon:csharp" width="40" height="40" />
-                                        <Icon icon="file-icons:nextjs" width="40" height="40" />
                                     </div>
                                 </div>
 
@@ -94,6 +93,7 @@ export default function InfoCard() {
                                         Framework and Library
                                     </div>
                                     <div className="flex gap-5">
+                                        <Icon icon="file-icons:nextjs" width="40" height="40" />
                                         <Icon icon="logos:tailwindcss-icon" width="40" height="40" />
                                         <Icon icon="vscode-icons:file-type-node" width="40" height="40" />
                                         <Icon icon="skill-icons:dotnet" width="40" height="40" />
