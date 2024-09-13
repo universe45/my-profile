@@ -20,11 +20,11 @@ export default function InfoCard() {
                             <h2 className="card-title font-bold justify-start">
                                 TITIPONG WANNACHAI
                             </h2>
-                            <a className="badge badge-warning badge-outline rounded-full p-3 font-normal justify-start">
+                            <a className="badge badge-warning badge-outline rounded-full p-3 font-normal justify-start select-none">
                                 Software & Web Developer
                             </a>
                         </div>
-                        <div className="grid grid-cols-2 md:grid-cols-4 justify-center gap-5">
+                        <div className="grid grid-cols-2 md:grid-cols-4 justify-center gap-5 select-none">
                             <a href="tel:+66954819416" className="btn btn-outline">
                                 <Icon icon="el:phone-alt" width="30" height="30" />
                             </a>
@@ -43,7 +43,7 @@ export default function InfoCard() {
                         </div>
                         <div className="flex flex-col gap-2">
                             <div>
-                                <h1 className="badge badge-lg badge-outline font-bold justify-start p-4">
+                                <h1 className="badge badge-lg badge-outline font-bold justify-start p-4 select-none">
                                     Education
                                 </h1>
                             </div>
@@ -63,11 +63,11 @@ export default function InfoCard() {
                 </div>
             </section>
 
-            <div className="flex w-full flex-col">
+            <div className="flex w-full flex-col select-none">
                 <div className="divider"> S K I L L S </div>
             </div>
 
-            <section id="2-Skill" className="flex flex-col gap-4 h-screen py-10">
+            <section id="2-Skill" className="flex flex-col gap-4 h-screen py-10 select-none">
                 <div className="card h-screen justify-center">
                     <div className="card bg-[#393E46] shadow-xl">
                         <div className="card-body">
@@ -127,19 +127,19 @@ export default function InfoCard() {
                 </div>
             </section>
 
-            <div className="flex w-full flex-col">
+            <div className="flex w-full flex-col select-none">
                 <div className="divider"> E X P E R I E N C E S </div>
             </div>
 
-            <section id="3-Experience" className="flex flex-row gap-4 h-screen py-10 justify-center items-center">
+            <section id="3-Experience" className="flex flex-row gap-4 h-screen py-10 justify-center items-center select-none">
                 <ModalCard />
             </section>
 
-            <div className="flex w-full flex-col">
+            <div className="flex w-full flex-col select-none">
                 <div className="divider"> C E R T I F I C A T E S </div>
             </div>
 
-            <section id="4-Certificate" className="flex flex-row gap-4 h-screen py-10 justify-center items-center">
+            <section id="4-Certificate" className="flex flex-row gap-4 h-screen py-10 justify-center items-center select-none">
                 <div className="carousel carousel-center carousel-vertical align-middle select-none">
                     <div className="align-middle select-none">
                         <div className="flex w-full flex-row justify-start">
