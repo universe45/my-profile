@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
-  const [devToolsOpen, setDevToolsOpen] = useState(false);
+  const [devToolsOpen, setDevToolsOpen] = useState(true);
 
   const checkMobile = () => {
     setIsMobile(window.innerWidth <= 1023 || window.innerHeight <= 579);
