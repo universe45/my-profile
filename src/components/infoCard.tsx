@@ -4,23 +4,23 @@
 "use client";
 import React from "react";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import ModalCard from "@/components/modalCard";
-
+import ModalCard from "@/components/modalExpCard";
+import CertCard from "./certCard";
 
 export default function InfoCard() {
     return (
-        <div className="carousel carousel-center carousel-vertical align-middle select-none">
-            <section id="1-AboutMe" className="caroseul-item flex flex-col h-[75vh] lg:h-screen justify-center lg:py-10 py-5">
+        <div>
+            <section id="1-AboutMe" className="flex flex-col h-[75vh] lg:h-screen justify-center lg:py-10 py-5">
                 <div className="card glass lg:h-[24rem] md:h-[24rem] justify-center bg-[#393E46] lg:card-side shadow-xl">
                     <figure className="">
-                        <img className="object-cover w-[64rem] h-[18rem] lg:h-full lg:w-[24rem]" src="/nightSky.jpg" alt="Profile Picture" />
+                        <img className="object-cover w-[64rem] h-[18rem] lg:h-full lg:w-[24rem]" src="my-profile/nightSky.jpg" alt="Profile Picture" />
                     </figure>
-                    <div className="card card-body gap-2">
+                    <div className="card card-body gap-3">
                         <div className="flex flex-col gap-2">
                             <h2 className="card-title font-bold justify-start">
                                 TITIPONG WANNACHAI
                             </h2>
-                            <a className="badge badge-primary badge-outline rounded-full p-3 font-normal justify-start">
+                            <a className="badge badge-warning badge-outline rounded-full p-3 font-normal justify-start">
                                 Software & Web Developer
                             </a>
                         </div>
@@ -63,7 +63,11 @@ export default function InfoCard() {
                 </div>
             </section>
 
-            <section id="2-Skill" className="caroseul-item flex flex-col gap-4 h-screen py-10">
+            <div className="flex w-full flex-col">
+                <div className="divider"> S K I L L S </div>
+            </div>
+
+            <section id="2-Skill" className="flex flex-col gap-4 h-screen py-10">
                 <div className="card h-screen justify-center">
                     <div className="card bg-[#393E46] shadow-xl">
                         <div className="card-body">
@@ -123,8 +127,26 @@ export default function InfoCard() {
                 </div>
             </section>
 
-            <section id="3-Experience" className="caroseul-item flex flex-row gap-4 h-screen py-10 justify-center items-center">
+            <div className="flex w-full flex-col">
+                <div className="divider"> E X P E R I E N C E S </div>
+            </div>
+
+            <section id="3-Experience" className="flex flex-row gap-4 h-screen py-10 justify-center items-center">
                 <ModalCard />
+            </section>
+
+            <div className="flex w-full flex-col">
+                <div className="divider"> C E R T I F I C A T E S </div>
+            </div>
+
+            <section id="4-Certificate" className="flex flex-row gap-4 h-screen py-10 justify-center items-center">
+                <div className="carousel carousel-center carousel-vertical align-middle select-none">
+                    <div className="align-middle select-none">
+                        <div className="flex w-full flex-row justify-start">
+                            <CertCard />
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
     );

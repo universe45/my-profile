@@ -4,8 +4,9 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 
 const listItems = [
     { id: "1-AboutMe", label: "A B O U T"},
-    { id: "2-Skill", label: "S K I L L"},
-    { id: "3-Experience", label: "E X P E R I E N C E"},
+    { id: "2-Skill", label: "S K I L L S"},
+    { id: "3-Experience", label: "E X P E R I E N C E S"},
+    { id: "4-Certificate", label: "C E R T I F I C A T E S"},
 ];
 
 export default function BottomNav() {
