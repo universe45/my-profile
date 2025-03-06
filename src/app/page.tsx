@@ -1,6 +1,7 @@
 "use client";
 import BottomNav from "@/components/bottomNav";
 import InfoCard from "@/components/infoCard";
+import Card from "@/components/card";
 import React, { useState, useEffect } from "react";
 
 export default function Home() {
@@ -8,7 +9,7 @@ export default function Home() {
   const [devToolsOpen, setDevToolsOpen] = useState(true);
 
   const checkMobile = () => {
-    setIsMobile(window.innerWidth <= 1023 || window.innerHeight <= 579);
+    setIsMobile(window.innerWidth <= 667 || window.innerHeight <= 375);
   };
 
   const detectDevTools = () => {
@@ -50,7 +51,9 @@ export default function Home() {
     };
   }, []);
 
-  if (devToolsOpen) {
+  const devToolsBypass = process.env.NEXT_PUBLIC_DEVTOOLS_BYPASS === "true";
+
+  if (devToolsOpen && !devToolsBypass) {
     return (
       <div className="flex justify-center items-center bg-base-100 min-h-screen">
         <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50 select-none">
@@ -67,9 +70,7 @@ export default function Home() {
       {isMobile ? (
         <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50 select-none">
           <div className="flex flex-col bg-transparent p-6 rounded shadow-lg text-center gap-4">
-            <h2 className="text-lg">Sorry</h2>
-            <p>Website not supported on mobile right now</p>
-            <p className="text-sm text-gray-500">( Available at 1024x580 screen resolution )</p>
+            <Card />
           </div>
         </div>
       ) : (
