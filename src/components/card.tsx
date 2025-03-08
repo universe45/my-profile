@@ -9,7 +9,7 @@ export default function InfoCard() {
                 <figure>
                     <img className="object-cover w-[64rem] h-[18rem] lg:h-full lg:w-[24rem]" src="my-profile/nightSky.jpg" alt="Profile Picture" />
                 </figure>
-                <div className="card card-body gap-5">
+                <div className="card card-body gap-5 justify-center">
                     <div className="flex flex-col gap-2 items-center">
                         <h2 className="card-title font-bold">
                             TITIPONG WANNACHAI

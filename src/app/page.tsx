@@ -76,7 +76,7 @@ export default function Home() {
       ) : (
         <>
           <div className="flex flex-col bg-base-100 w-full lg:w-3/4 px-14 lg:px-14 justify-center items-center overflow-y-scroll pb-24 lg:pb-0">
-            <InfoCard />
+            <Card />
           </div>
 
           <div className="fixed toast toast-end toast-bottom select-none">
