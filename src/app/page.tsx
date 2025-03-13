@@ -32,9 +32,19 @@ export default function Home() {
     }
   }
 
+  const detectDevToolsAdvanced = () => {
+    const devtools = /./;
+    devtools.toString = () => {
+      setDevToolsOpen(true);
+      return '';
+    };
+    console.log(devtools);
+  };
+
   useEffect(() => {
     checkMobile();
     detectDevTools();
+    detectDevToolsAdvanced();
 
     window.addEventListener("resize", checkMobile);
     window.addEventListener("resize", detectDevTools);
@@ -79,9 +89,9 @@ export default function Home() {
             <Card />
           </div>
 
-          <div className="fixed toast toast-end toast-bottom select-none">
+          {/* <div className="fixed toast toast-end toast-bottom select-none">
             <BottomNav />
-          </div>
+          </div> */}
         </>
       )}
 

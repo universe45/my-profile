@@ -1,13 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import Image from "next/image";
+
+const profileImg = "https://www.dropbox.com/scl/fi/n9nlzjtkyyio05p6wsz3v/IMG_7613.PNG?rlkey=963eq5uhcwdkbi2f2f9aspln8&st=u4p5y2op&raw=1";
 
 export default function InfoCard() {
     return (
         <div>
             <div className="card lg:h-[24rem] md:h-[24rem] bg-[#393E46] lg:card-side shadow-xl">
                 <figure>
-                    <img className="object-cover w-[64rem] h-[18rem] lg:h-full lg:w-[24rem]" src="my-profile/nightSky.jpg" alt="Profile Picture" />
+                    <Image src={profileImg} alt="Profile Image" className="lg:rounded-t-none lg:rounded-l-lg rounded-t-lg object-cover w-full h-full" width={512} height={512} />
                 </figure>
                 <div className="card card-body gap-5 justify-center">
                     <div className="flex flex-col gap-2 items-center">
