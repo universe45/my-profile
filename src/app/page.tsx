@@ -19,6 +19,8 @@ export default function Home() {
       const widthThreshold = window.outerWidth - window.innerWidth > threshold;
       const heightThreshold = window.outerHeight - window.innerHeight > threshold;
       setDevToolsOpen(widthThreshold || heightThreshold);
+    } else {
+      setDevToolsOpen(false);
     }
   }, [isMobile]);
 
@@ -62,7 +64,7 @@ export default function Home() {
       window.removeEventListener("contextmenu", disableRightClick);
       window.removeEventListener("keydown", disableKeyDown);
     };
-  }, [detectDevTools]);
+  }, [detectDevTools, isMobile]);
 
   const devToolsBypass = process.env.NEXT_PUBLIC_DEVTOOLS_BYPASS === "true";
 

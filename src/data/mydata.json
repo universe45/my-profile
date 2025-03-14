@@ -1,0 +1,34 @@
+{
+    "personalData": [
+        {
+            "name": "Titipong Wannachai",
+            "email": "ttp.wannachai@gmail.com",
+            "mobile":"+66954819416",
+            "position": "Software Engineer",
+            "image": "https://www.dropbox.com/scl/fi/n9nlzjtkyyio05p6wsz3v/IMG_7613.PNG?rlkey=963eq5uhcwdkbi2f2f9aspln8&st=u4p5y2op&raw=1"
+        }
+    ],
+    "profileLink": [
+        {
+            "linkName": "linkedin",
+            "link": "https://www.linkedin.com/in/wnncttp"
+        },
+        {
+            "linkName": "github",
+            "link": "https://www.github.com/universe45"
+        }
+    ],
+    "certifications": [
+        {
+            "name": "AWS Certified Solutions Architect - Associate",
+            "date": "2021-06-01",
+            "link": "https://www.youracclaim.com/badges/7b7b7b7b-7b7b-7b7b-7b7b-7b7b7b7b7b7b"
+        },
+        {
+            "name": "AWS Certified Developer - Associate",
+            "date": "2021-06-01",
+            "link": "https://www.youracclaim.com/badges/7b7b7b7b-7b7b-7b7b-7b7b-7b7b7b7b7b7b"
+        }
+    ]
+}
+
