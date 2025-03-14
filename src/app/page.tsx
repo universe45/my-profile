@@ -2,6 +2,7 @@
 import BottomNav from "@/components/bottomNav";
 import InfoCard from "@/components/infoCard";
 import Card from "@/components/card";
+import MyCard from "@/components/myCard";
 import React, { useState, useEffect } from "react";
 
 export default function Home() {
@@ -12,12 +13,14 @@ export default function Home() {
     setIsMobile(window.innerWidth <= 667 || window.innerHeight <= 375);
   };
 
-  const detectDevTools = () => {
-    const threshold = 160;
-    const widthThreshold = window.outerWidth - window.innerWidth > threshold;
-    const heightThreshold = window.outerHeight - window.innerHeight > threshold;
-    setDevToolsOpen(widthThreshold || heightThreshold);
-  };
+  const detectDevTools = React.useCallback(() => {
+    if (!isMobile) {
+      const threshold = 160;
+      const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+      const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+      setDevToolsOpen(widthThreshold || heightThreshold);
+    }
+  }, [isMobile]);
 
   const disableRightClick = (event: MouseEvent) => {
     event.preventDefault();
@@ -26,7 +29,7 @@ export default function Home() {
   const disableKeyDown = (event: KeyboardEvent) => {
     const keysToDisable = ["F12", "fn"];
     const isCtrlShift = event.ctrlKey && event.shiftKey;
-    
+
     if (keysToDisable.includes(event.key) && (event.key === "F12" || isCtrlShift)) {
       event.preventDefault();
     }
@@ -59,7 +62,7 @@ export default function Home() {
       window.removeEventListener("contextmenu", disableRightClick);
       window.removeEventListener("keydown", disableKeyDown);
     };
-  }, []);
+  }, [detectDevTools]);
 
   const devToolsBypass = process.env.NEXT_PUBLIC_DEVTOOLS_BYPASS === "true";
 
@@ -77,26 +80,9 @@ export default function Home() {
 
   return (
     <div className="flex justify-center items-center bg-base-100 min-h-screen">
-      {isMobile ? (
-        <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50 select-none">
-          <div className="flex flex-col bg-transparent p-6 rounded shadow-lg text-center gap-4">
-            <Card />
-          </div>
-        </div>
-      ) : (
-        <>
-          <div className="flex flex-col bg-base-100 w-full lg:w-3/4 px-14 lg:px-14 justify-center items-center overflow-y-scroll pb-24 lg:pb-0">
-            <Card />
-          </div>
-
-          {/* <div className="fixed toast toast-end toast-bottom select-none">
-            <BottomNav />
-          </div> */}
-        </>
-      )}
-
+      <MyCard />
       <footer className="fixed bottom-0 text-center text-xs text-gray-500 p-4 select-none">
-        <p>&copy; {new Date().getFullYear()} TTP-WNNC. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} TITIPONG W. All rights reserved.</p>
       </footer>
     </div>
   );
