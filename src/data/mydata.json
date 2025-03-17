@@ -20,14 +20,46 @@
     ],
     "certifications": [
         {
-            "name": "AWS Certified Solutions Architect - Associate",
-            "date": "2021-06-01",
-            "link": "https://www.youracclaim.com/badges/7b7b7b7b-7b7b-7b7b-7b7b-7b7b7b7b7b7b"
+            "name": "NVIDIA",
+            "title": "Fundamentals of Deep Learning",
+            "link": "https://learn.nvidia.com/certificates?id=eb3f610f34ce4582b5780abd66d3f42f",
+            "coverImg": "https://www.nvidia.com/content/dam/en-zz/Solutions/about-nvidia/logo-and-brand/nvidia-og-image-white-bg-1200x630.jpg"
         },
         {
-            "name": "AWS Certified Developer - Associate",
-            "date": "2021-06-01",
-            "link": "https://www.youracclaim.com/badges/7b7b7b7b-7b7b-7b7b-7b7b-7b7b7b7b7b7b"
+            "name": "Google Cloud",
+            "title": "Analyzing Speech and Language with Google APIs",
+            "link": "https://www.cloudskillsboost.google/public_profiles/63e5b97c-fa72-4e4e-9f58-cdca46e7aab7/badges/9321994",
+            "coverImg": "https://cdn.qwiklabs.com/XtN9bsXRPu16Qi8rfkEKllJLdLJW1cCFACu6NgEjkGk%3D"
+        },
+        {
+            "name": "Google Cloud",
+            "title": "Classify Images with TensorFlow on Google Cloud",
+            "link": "https://www.cloudskillsboost.google/public_profiles/63e5b97c-fa72-4e4e-9f58-cdca46e7aab7/badges/9370781",
+            "coverImg": "https://cdn.qwiklabs.com/IogaVGLwAz%2Bd%2FnGGV%2BpJLZ%2BunvPScnYCL0FwVWLT%2FY0%3D"
+        },
+        {
+            "name": "Google Cloud",
+            "title": "Perform Predictive Data Analysis in BigQuery",
+            "link": "https://www.cloudskillsboost.google/public_profiles/63e5b97c-fa72-4e4e-9f58-cdca46e7aab7/badges/9371579",
+            "coverImg": "https://cdn.qwiklabs.com/AX%2B9jIITVd7mqWAfNhSREi4FP5ep%2Fv9%2BZvrGnZEbQd0%3D"
+        },
+        {
+            "name": "Google Cloud",
+            "title": "Analyze Images with the Cloud Vision API",
+            "link": "https://www.cloudskillsboost.google/public_profiles/63e5b97c-fa72-4e4e-9f58-cdca46e7aab7/badges/9380368",
+            "coverImg": "https://cdn.qwiklabs.com/zf4W09BpF8ntvKRBqeH3VntMFtb%2Bz8Itfc9FSCiAlL0%3D"
+        },
+        {
+            "name": "Google Cloud",
+            "title": "Monitor and Manage Google Cloud Resources",
+            "link": "https://www.cloudskillsboost.google/public_profiles/63e5b97c-fa72-4e4e-9f58-cdca46e7aab7/badges/9382760",
+            "coverImg": "https://cdn.qwiklabs.com/zi3%2BgR5zKO1uBWS3fnr%2BD%2FXCkCJYliqvBAH3F8Ex6ko%3D"
+        },
+        {
+            "name": "Google Cloud",
+            "title": "Manage Kubernetes in Google Cloud",
+            "link": "https://www.cloudskillsboost.google/public_profiles/63e5b97c-fa72-4e4e-9f58-cdca46e7aab7/badges/9385111",
+            "coverImg": "https://cdn.qwiklabs.com/%2BlsBsryVyG0kEn7y2kgNUoCJxiq4mL%2BFeCfysb3Cw%2BI%3D"
         }
     ]
 }

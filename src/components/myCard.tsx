@@ -26,16 +26,16 @@ export default function MyCard() {
                         </a>
                     </div>
                     <div className="grid grid-cols-4 md:grid-cols-4 gap-5 justify-items-center select-none">
-                        <a href={`tel:${personalData[0].mobile}`} className="btn btn-circle rounded-full w-16 h-16">
+                        <a href={`tel:${personalData[0].mobile}`} title="Phone no." className="btn btn-circle rounded-full w-16 h-16">
                             <Icon icon="fluent-color:phone-32" width="30" height="30" />
                         </a>
-                        <a href={`mailto:${personalData[0].email}`} className="btn btn-circle rounded-full w-16 h-16">
+                        <a href={`mailto:${personalData[0].email}`} title="G-Mail" className="btn btn-circle rounded-full w-16 h-16">
                             <Icon icon="skill-icons:gmail-light" width="30" height="30" />
                         </a>
-                        <a href={profileLink[1].link} className="btn btn-circle rounded-full w-16 h-16" target="_blank" rel="noopener noreferrer">
+                        <a href={profileLink[1].link} title="GitHub" className="btn btn-circle rounded-full w-16 h-16" target="_blank" rel="noopener noreferrer">
                             <Icon icon="mdi:github" style={{ color: "#6e5494" }} width="40" height="40" />
                         </a>
-                        <a href={profileLink[0].link} className="btn btn-circle rounded-full w-16 h-16" target="_blank" rel="noopener noreferrer">
+                        <a href={profileLink[0].link} title="LinkedIn" className="btn btn-circle rounded-full w-16 h-16" target="_blank" rel="noopener noreferrer">
                             <Icon icon="skill-icons:linkedin" width="30" height="30" />
                         </a>
                     </div>

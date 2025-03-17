@@ -15,7 +15,7 @@ interface LinkData {
 class DataManager {
     private personalData: PersonalData[];
     private profileLink: LinkData[];
-    readonly image: string = "https://www.dropbox.com/scl/fi/n9nlzjtkyyio05p6wsz3v/IMG_7613.PNG?rlkey=963eq5uhcwdkbi2f2f9aspln8&st=u4p5y2op&raw=1"; 
+
     constructor() {
         this.personalData = mydata.personalData;
         this.profileLink = mydata.profileLink;
