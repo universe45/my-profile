@@ -7,12 +7,9 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
-  const [devToolsOpen, setDevToolsOpen] = useState(true);
-  const debuggerTrapRef = useRef<ReturnType<typeof setInterval> | null>(null);
-
-  // ── Helpers ──────────────────────────────────────────────────────────────
-
-  const open = useCallback(() => setDevToolsOpen(true), []);
+  // Starts false — only flips to true when a DevTools action is detected
+  const [devToolsOpen, setDevToolsOpen] = useState(false);
+  const pollRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const checkMobile = useCallback(() => {
     setIsMobile(window.innerWidth <= 667 || window.innerHeight <= 375);
@@ -20,80 +17,46 @@ export default function Home() {
 
   // ── Detection methods ─────────────────────────────────────────────────────
 
-  /** 1. Window size difference (works for docked devtools) */
+  /** Checks window size gap — works for docked AND separate-window DevTools */
   const detectBySize = useCallback(() => {
-    if (isMobile) { setDevToolsOpen(false); return; }
+    if (isMobile) return;
     const threshold = 160;
     if (
       window.outerWidth - window.innerWidth > threshold ||
       window.outerHeight - window.innerHeight > threshold
-    ) open();
-    else setDevToolsOpen(false);
-  }, [isMobile, open]);
-
-  /** 2. console.log regex toString trick */
-  const detectByConsole = useCallback(() => {
-    const probe = /./;
-    probe.toString = () => { open(); return ""; };
-    console.log("%c", probe);
-    console.clear();
-  }, [open]);
-
-  /** 3. debugger timing — devtools pauses execution, causing a measurable delay */
-  const detectByDebuggerTiming = useCallback(() => {
-    const start = performance.now();
-    // eslint-disable-next-line no-debugger
-    debugger;
-    if (performance.now() - start > 100) open();
-  }, [open]);
-
-  /** 4. Firebug legacy object check */
-  const detectByFirebug = useCallback(() => {
-    // @ts-expect-error: legacy Firebug global
-    if (window.Firebug?.chrome?.isInitialized) open();
-  }, [open]);
-
-  /** 5. console.profile timing (Chrome) */
-  const detectByProfile = useCallback(() => {
-    const start = performance.now();
-    console.profile("dt");
-    console.profileEnd("dt");
-    if (performance.now() - start > 10) open();
-  }, [open]);
-
-  /** 6. Periodic polling — catches detached/undocked devtools */
-  const startPolling = useCallback(() => {
-    if (debuggerTrapRef.current) clearInterval(debuggerTrapRef.current);
-    debuggerTrapRef.current = setInterval(() => {
-      detectBySize();
-      detectByConsole();
-      detectByDebuggerTiming();
-    }, 1000);
-  }, [detectBySize, detectByConsole, detectByDebuggerTiming]);
+    ) {
+      setDevToolsOpen(true);
+    }
+  }, [isMobile]);
 
   // ── Keyboard / context-menu blocking ────────────────────────────────────
 
-  const blockContextMenu = (e: MouseEvent) => e.preventDefault();
-
-  const blockKeys = (e: KeyboardEvent) => {
-    const blocked =
+  /** Block F12 / Ctrl+Shift+I / Cmd+Option+I and flag DevTools as open */
+  const blockKeys = useCallback((e: KeyboardEvent) => {
+    const isDevToolsKey =
       e.key === "F12" ||
       (e.ctrlKey && e.shiftKey && ["I", "J", "C", "K", "U"].includes(e.key)) ||
       (e.metaKey && e.altKey && ["I", "J", "C"].includes(e.key)) || // macOS
       (e.ctrlKey && e.key === "U");
-    if (blocked) e.preventDefault();
-  };
+    if (isDevToolsKey) {
+      e.preventDefault();
+      setDevToolsOpen(true);
+    }
+  }, []);
+
+  /** Block right-click Inspect */
+  const blockContextMenu = useCallback((e: MouseEvent) => {
+    e.preventDefault();
+    setDevToolsOpen(true);
+  }, []);
 
   // ── Effects ───────────────────────────────────────────────────────────────
 
   useEffect(() => {
     checkMobile();
-    detectBySize();
-    detectByConsole();
-    detectByFirebug();
-    detectByProfile();
-    detectByDebuggerTiming();
-    startPolling();
+
+    // Poll every 2 s — lightweight size-only check, catches Chrome menu open
+    pollRef.current = setInterval(detectBySize, 2000);
 
     window.addEventListener("resize", checkMobile);
     window.addEventListener("resize", detectBySize);
@@ -101,7 +64,7 @@ export default function Home() {
     window.addEventListener("keydown", blockKeys);
 
     return () => {
-      if (debuggerTrapRef.current) clearInterval(debuggerTrapRef.current);
+      if (pollRef.current) clearInterval(pollRef.current);
       window.removeEventListener("resize", checkMobile);
       window.removeEventListener("resize", detectBySize);
       window.removeEventListener("contextmenu", blockContextMenu);
