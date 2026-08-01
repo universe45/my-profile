@@ -1,8 +1,6 @@
 import React from "react";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import Image from "next/image";
-import DataManager
-    from "@/manager/DataManager";
+import DataManager from "@/manager/DataManager";
 
 export default function MyCard() {
     const dataManager = new DataManager();
@@ -10,11 +8,16 @@ export default function MyCard() {
     const personalData = dataManager.getPersonalData();
     const profileLink = dataManager.getProfileLink();
 
+
+
     return (
         <div>
             <div className="card bg-[#393E46] shadow-xl w-[22em] h-[22rem]">
-                <figure>
-                    <Image className="" src={personalData[0].image} alt="Profile Image" width={512} height={512} />
+                <figure className="relative flex items-center justify-center h-40 shrink-0">
+                    <div className="absolute inset-0 bg-gradient-to-br from-pink-400/20 to-white/10" />
+                    <div className="relative w-24 h-24 rounded-full bg-gradient-to-br from-pink-400 to-white flex items-center justify-center shadow-lg ring-4 ring-white/10">
+                        <span className="text-4xl font-bold text-pink-600 select-none">⌘</span>
+                    </div>
                 </figure>
                 <div className="card card-body gap-5 justify-center">
                     <div className="flex flex-col gap-2 items-center">

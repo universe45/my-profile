@@ -5,7 +5,6 @@ interface PersonalData {
     email: string;
     mobile: string;
     position: string;
-    image: string;
 }
 interface LinkData {
     linkName: string;
